@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo%}{% endblock%}</title>
+</head>
+
+<body>
+
+<div class="container-fluid>
+
+    <div class="row">
+
+        <h3 class="mt-3">Assistência</h3>
+
+        <hr>
+
+        <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="">
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="">
+                    Aparelhos
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="">
+                    Ordens de Serviço
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="col-10 p-4">
+
+        {% block conteudo %}
+        {% endblock %}
+        
+    </div>
+
+</div>
+    
+</body>
+</html>
