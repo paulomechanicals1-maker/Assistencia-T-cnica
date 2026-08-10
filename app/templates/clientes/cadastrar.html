@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+Cadastrar Cliente
+{% endblock %}
+
+{% block conteudo %}
+
+<h2>Novo Cliente</h2>
+
+<form method="POST">
+
+    <div>
+        <label>Nome</label>
+        <input
+            type="text"
+            name="nome"
+            required>
+    </div>
+
+    <br>
+
+    <div>
+        <label>CPF</label>
+        <input
+            type="text"
+            name="cpf">
+    </div>
+
+    <br>
+
+    <div>
+        <label>WhatsApp</label>
+        <input
+            type="text"
+            name="whatsapp">
+    </div>
+
+    <br>
+
+    <div>
+        <label>Email</label>
+        <input
+            type="email"
+            name="email">
+    </div>
+
+    <br>
+
+    <div>
+        <label>Observações</label>
+
+        <textarea
+            name="observacoes"
+            rows="4"></textarea>
+    </div>
+
+    <br>
+
+    <button type="submit">
+        Salvar Cliente
+    </button>
+
+</form>
+
+{% endblock %}
