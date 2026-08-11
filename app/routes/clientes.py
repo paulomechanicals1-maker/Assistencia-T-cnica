@@ -39,13 +39,27 @@ def listar_clientes():
     methods=["GET", "POST"]
 )
 
-@clientes_bp.route("/clientes/editar/<int:id>")
+@clientes_bp.route("/clientes/editar/<int:id>", methods=["GET", "POST"])
 def editar_cliente(id):
 
+    if request.method == "POST":
+
+        Cliente.atualizar(
+            id,
+            request.form["nome"],
+            request.form["cpf"],
+            request.fomr["whatsapp"],
+            request.form["email"],
+            request.form["observacoes"]
+        )
+
+        return redirect(
+            url_for("clientes.listar_clientes")
+        )
     cliente = Cliente.buscar_por_id(id)
 
     return render_template(
-        "clientes/editar.html",
+        "clientes;editar.html",
         cliente=cliente
     )
 

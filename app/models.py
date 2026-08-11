@@ -71,3 +71,39 @@ class Cliente:
         conexao.close()
 
         return clientes
+    
+    @staticmethod
+    def atualizar(
+        id,
+        nome,
+        cpf,
+        whatsapp,
+        email,
+        observacoes
+    ):
+
+        conexao = get_connection()
+
+        cursor = conexao.cursor()
+
+        cursor.execute("""
+            UPDATE clientes
+            SET
+                nome = ?,
+                cpf = ?,
+                whatsapp = ?,
+                email = ?,
+                observacoes = ?
+            WHERE id = ?
+        """, (
+            nome,
+            cpf,
+            whatsapp,
+            email,
+            observacoes,
+            id
+        ))
+
+        conexao.commit()
+
+        conexao.close()
