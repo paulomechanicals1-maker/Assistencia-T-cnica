@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+Editar Cliente
+{% endblock %}
+
+{% block conteudo %}
+
+<h2>Editar Cliente</h2>
+
+<form>
+
+    <div class="mb-3">
+        <label>Nome</label>
+
+        <input
+            type ="text"
+            class ="form-control"
+            value = "{{ cliente.nome }}">
+              
+    </div>
+
+    <div class="mb-3">
+        <label>CPF</label>
+
+        <input
+            type ="text"
+            class ="form-control"
+            value = "{{ cliente.cpf }}">
+
+    </div>
+
+    <div class="mb-3">
+        <label>Whatsapp</label>
+
+        <input
+            type ="text"
+            class ="form-control"
+            value = "{{ cliente.whatsapp }}">
+
+    </div>
+
+    <div class="mb-3">
+        <label>E-mail</label>
+
+        <input
+            type ="text"
+            class ="form-control"
+            value = "{{ cliente.email }}">
+    
+    </div>
+
+</form>
+
+{% endblock %}

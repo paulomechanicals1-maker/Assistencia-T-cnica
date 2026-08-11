@@ -42,7 +42,12 @@ def listar_clientes():
 @clientes_bp.route("/clientes/editar/<int:id>")
 def editar_cliente(id):
 
-    return f"Editando cliente {id}"
+    cliente = Cliente.buscar_por_id(id)
+
+    return render_template(
+        "clientes/editar.html",
+        cliente=cliente
+    )
 
 def cadastrar_cliente():
 
