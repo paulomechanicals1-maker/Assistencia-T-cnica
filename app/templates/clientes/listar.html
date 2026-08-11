@@ -30,6 +30,7 @@ Clientes
                     <th>CPF</th>
                     <th>Whatsapp</th>
                     <th>E-mail</th>
+                    <th>Ações</th>
                 </tr>
 
             </thead>
@@ -44,6 +45,14 @@ Clientes
                     <td>{{ cliente.cpf }}</td>
                     <td>{{ cliente.whatsapp }}</td>
                     <td>{{ cliente.email }}</td>
+                <td>
+                    <a href="/clientes/editar/{{ cliente.id }}" 
+                    class="btn btn-warning btn-sm">
+                        Editar
+                    </a>
+
+                    <button class="btn btn-danger btn-sm">Excluir</button>
+                </td>
 
                 </tr>
 

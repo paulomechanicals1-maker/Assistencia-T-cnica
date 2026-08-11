@@ -38,6 +38,12 @@ def listar_clientes():
     "/clientes/cadastrar",
     methods=["GET", "POST"]
 )
+
+@clientes_bp.route("/clientes/editar/<int:id>")
+def editar_cliente(id):
+
+    return f"Editando cliente {id}"
+
 def cadastrar_cliente():
 
     if request.method == "POST":
